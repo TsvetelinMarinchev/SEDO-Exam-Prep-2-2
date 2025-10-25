@@ -1,14 +1,9 @@
 pipeline{
     agent any
     stages{
-        stage("Restore .NET packages"){
-            steps{
-               bat 'dotnet restore'
-            }
-        }
         stage("Build .NET Project"){
             steps{
-               bat 'dotnet build --no-restore'
+               bat 'dotnet build'
             }
         }
         stage("Run unit and integration Test"){
